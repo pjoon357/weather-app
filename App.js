@@ -28,6 +28,7 @@ export default class extends React.Component {
       await Location.requestForegroundPermissionsAsync();
       const {coords : {latitude, longitude}} = await Location.getCurrentPositionAsync();
       this.getWeather(latitude,longitude);
+      console.log(latitude,longitude);
     } catch (error) {
       Alert.alert("Can't find you","so sad...");
     }
